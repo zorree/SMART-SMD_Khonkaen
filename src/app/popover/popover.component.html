@@ -1,0 +1,19 @@
+<ion-list>
+  <ion-list-header>ตั้งค่า</ion-list-header>
+  <ion-item>
+    <ion-label>ช่องจ่ายยา</ion-label>
+    <p>{{station}}</p>
+  </ion-item>
+    <ion-item>
+     <ion-icon slot="start" name="moon"></ion-icon>
+       <ion-label>ธีม</ion-label>
+      <ion-toggle slot="end" 
+                (ionChange)='toggleTheme($event)'  checked="{{ThemeEvent}}"></ion-toggle>
+     </ion-item>
+    <ion-item>
+     <ion-icon slot="start" name="cog-outline"></ion-icon>
+       <ion-label>ปิด/เปิด</ion-label>
+      <ion-toggle slot="end" (ionChange)='toggleStatus($event)' checked="{{StatusEvent}}"></ion-toggle>
+     </ion-item>
+
+</ion-list>

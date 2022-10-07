@@ -1,0 +1,113 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>order_transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>drugcheck</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row>
+        <ion-col size=[3]>
+          <div class="ion-text-start">
+            <ion-title style="margin-top: 5%;">
+              SMD
+            </ion-title>
+          </div>
+        </ion-col>
+        <ion-col>
+          ผู้ปฏิบัติงาน {{fullname}}<br>
+
+        </ion-col>
+        <ion-col size=[1]>
+          <div class="ion-text-end">
+            <ion-icon slot="icon-only" size="large" name="ellipsis-horizontal-outline" (click)="presentPopover($event)">
+            </ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid>
+    <!-- <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let item of data;">
+            <ion-row>
+              <ion-col size="8">
+                <ion-item-group>
+                  <h1>{{item.genericname}}</h1>
+                  <ion-label>{{item.remain}} {{item.fname}} {{item.lname}}</ion-label>
+                </ion-item-group>
+              </ion-col>
+              <ion-col>
+                <ion-button expand="block" size="large" (click)="_call$(item.internal_que);">เรียกซ้ำ</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row style="border-bottom: 2px cadetblue solid ;">
+      <ion-col size="1" style="text-align: center;">
+        ลำดับ
+      </ion-col>
+      <ion-col size="2">
+        HN
+      </ion-col>
+      <ion-col>
+        ชื่อยา
+      </ion-col>
+      <ion-col size="2">
+        จำนวน
+      </ion-col>
+      <ion-col size="2">
+        ผู้จ่าย
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of data; let i = 'index + 1'" style="border-bottom: 2px cadetblue solid ;">
+      <ion-col size="1" style="text-align: center;">
+        {{i}}
+      </ion-col>
+      <ion-col size="2">
+        {{item.hn}}
+      </ion-col>
+      <ion-col>
+        {{item.genericname}}
+      </ion-col>
+      <ion-col size="2">
+        {{item.qty}}
+      </ion-col>
+      <ion-col size="2">
+        {{item.fname}} {{item.lname}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

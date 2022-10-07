@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-menu-button size="large" slot="start" menu="main-menu"></ion-menu-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col size=[3]>
+          <div class="ion-text-start">
+            <ion-title style="margin-top: 5%;">
+              SMD
+            </ion-title>
+          </div>
+        </ion-col>
+        <ion-col>
+          ผู้ปฏิบัติงาน {{fullname}}<br>
+        </ion-col>
+        <ion-col size=[1]>
+          <div class="ion-text-end">
+            <ion-icon slot="icon-only" size="large" name="ellipsis-horizontal-outline" (click)="presentPopover($event)">
+            </ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div id="bg">
+
+    <ion-card class="welcome-card">
+      <ion-card-header>
+        <ion-card-title style="text-align: center;">รายการเข้าระบบ / วัน</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <canvas #barChart></canvas>
+      </ion-card-content>
+    </ion-card>
+
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header style="text-align: center; ">
+              <a [routerLink]="['/home']" color="dark"><img src="../../assets/drug.jpg"
+                  style="width: 100px;height: 100px;  border-radius: 10%;" class="bounce">
+                <h1>จ่ายยา</h1>
+              </a>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header style="text-align: center; ">
+              <a [routerLink]="['/stack']"><img src="../../assets/report_drug.jpg"
+                  style="width: 100px;height: 100px;  border-radius: 10%;" class="bounce">
+                <h1>ค้นหาตะกร้า</h1>
+              </a>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header style="text-align: center; ">
+              <a [routerLink]="['/report-status']"><img src="../../assets/report_drug.jpg"
+                  style="width: 100px;height: 100px;  border-radius: 10%;" class="bounce">
+                <h1>ค้นหาสถานะ</h1>
+              </a>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header style="text-align: center; ">
+              <a [routerLink]="['/drugcheck']"><img src="../../assets/stock.png"
+                  style="width: 80px;height: 70px;  border-radius: 10%;margin-top: 15px;margin-bottom: 15px;" class="bounce">
+                <h1>ตรวจรสอบยา</h1>
+              </a>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header style="text-align: center; ">
+              <a [routerLink]="['/setting-dash']"><img src="../../assets/hotpital.jpg"
+                  style="width: 100px;height: 100px;  border-radius: 10%;" class="bounce">
+                <h1>ตั้งค่า</h1>
+              </a>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+        <ion-col size="6">
+          <ion-card>
+            <ion-card-header style="text-align: center; ">
+              <a (click)="exit();"><img src="../../assets/exit.jpg"
+                  style="width: 100px;height: 100px;  border-radius: 10%;" class="bounce">
+                <h1>ออกจากระบบ </h1>
+              </a>
+            </ion-card-header>
+          </ion-card>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+
+
+  </div>
+</ion-content>

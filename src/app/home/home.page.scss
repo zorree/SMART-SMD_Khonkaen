@@ -1,0 +1,89 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+#fixbottom{
+  text-align: center;
+  position: absolute;
+  left: 10%;
+  right:10%;
+  bottom:0%;
+  transform: translateY(-50%);
+}
+
+
+
+
+#status-label {
+  display: inline-block;
+  width: 130px;
+  text-align: left;
+}
+
+/* Make it a circle */
+#indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 6px;
+  margin: 0 10px;
+  display: inline-block;
+  background: #ffc310; /* Ember by default, will be used for CONNECTING and CLOSING */
+}
+
+.CLOSED#indicator {
+  background: rgb(251, 27, 27);
+}
+
+.OPEN#indicator {
+  background: rgb(17, 255, 17);
+}
+
+.my-custom-class .popover-content {
+  background: #222;
+}
+
+#rounded {
+  width: 100%;
+  height: 100px;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 10px;
+  margin-bottom: 10px;  
+}
+ion-content{
+  font-family: 'Prompt', sans-serif;
+}
+.box {
+  margin-top: 10%;
+  font-size: 3rem;
+  padding: 4rem;
+  background: #333;
+  color: white;
+  border:none;
+  border-radius: 5px;
+}
+

@@ -1,0 +1,38 @@
+<ion-app>
+  <ion-menu side="start" menuId="main-menu" type="overlay" contentId="main">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>เมนู</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-menu-toggle>
+      <ion-list >   
+        <ion-item slot="start" routerLink="/home">
+          <ion-icon name="clipboard"></ion-icon>&nbsp;
+          จ่ายยา</ion-item>
+        <ion-item slot="start" routerLink="/stack">
+          <ion-icon name="folder"></ion-icon>&nbsp;
+          ค้นหา พักตะกร้า</ion-item>
+        <ion-item slot="start" routerLink="/report-status">
+          <ion-icon name="folder"></ion-icon>&nbsp;
+          ค้นหา สถานะ</ion-item>
+          <ion-item slot="start" routerLink="/report-status">
+        <ion-icon name="folder"></ion-icon>&nbsp;
+          ตรวจรสอบยา</ion-item>
+    
+      </ion-list>
+    
+      <ion-list>
+        <ion-item slot="start" routerLink="/setting-dash">
+          <ion-icon name="construct"></ion-icon>&nbsp;
+          ตั้งค่า-Dashboard</ion-item>
+      </ion-list>
+
+      <ion-button color="danger" expand="block" (click)="exit();"> ออกไปหน้าลงชื่อเข้าใช้</ion-button>
+      
+      </ion-menu-toggle>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

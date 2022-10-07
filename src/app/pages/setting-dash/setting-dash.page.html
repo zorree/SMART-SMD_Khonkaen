@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
+    <div class="ion-text-end" >
+      <ion-icon slot="icon-only" size="large"name="ellipsis-horizontal-outline"  (click)="presentPopover($event)" style="margin-right: 5px;"></ion-icon>
+  </div>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <h3>Dashboard-Color</h3>
+
+         <ion-item>
+         <ion-label>Station1 Color</ion-label>
+          {{color1}}
+         <input type="color" [(ngModel)]="color1" name="color1">
+         </ion-item>
+
+        <ion-item>
+          <ion-label>Station2 Color</ion-label>
+          {{color2}}
+          <input type="color" [(ngModel)]="color2" name="color2">
+            </ion-item>
+
+            <ion-item>
+           <ion-label>Station3 Color</ion-label>
+            {{color3}}
+           <input type="color" [(ngModel)]="color3" name="color3">
+            </ion-item>
+
+            <ion-item>
+             <ion-label>Station4 Color</ion-label>
+              {{color4}}
+              <input type="color" [(ngModel)]="color4" name="color4">
+             </ion-item>
+
+               <ion-item>
+              <ion-label>Station5 Color</ion-label>
+              {{color5}}
+               <input type="color" [(ngModel)]="color5" name="color5">
+              </ion-item>
+             <ion-item>
+               <ion-label>Font Color</ion-label>
+               {{fontcolor}}
+               <input type="color" [(ngModel)]="fontcolor" name="fontcolor">
+             </ion-item>
+
+            <ion-item>
+              <ion-label>Box Number Color</ion-label>
+              {{boxcolor}}
+              <input type="color" [(ngModel)]="boxcolor" name="boxcolor">
+            </ion-item>
+        <ion-button color="tertiary" expand="block" (click)="set_color_dash();">set Color</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

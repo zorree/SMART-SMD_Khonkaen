@@ -1,0 +1,136 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-title>drugcheck</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+</ion-content> -->
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="menu"></ion-back-button>
+    </ion-buttons>
+    <ion-grid>
+      <ion-row>
+        <ion-col size=[3]>
+          <div class="ion-text-start">
+            <ion-title style="margin-top: 5%;">
+              SMD
+            </ion-title>
+          </div>
+        </ion-col>
+        <ion-col>
+          ผู้ปฏิบัติงาน {{fullname}}<br>
+
+        </ion-col>
+        <ion-col size=[1]>
+          <div class="ion-text-end">
+            <ion-icon slot="icon-only" size="large" name="ellipsis-horizontal-outline" (click)="presentPopover($event)">
+            </ion-icon>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <!-- <ion-row>
+      <ion-col>
+        <ion-button (click)="call_stack();">ยาทั้งหมด</ion-button>
+        <ion-button color="danger" (click)="call_stack();">ยาต่ำกว่าระดับ</ion-button>
+
+        <ion-item>
+          <ion-label position="fixed">ค้นหา ตะกร้า</ion-label>
+          <ion-input #input type="number" placeholder="HN" [(ngModel)]="HN_key" (keyup.enter)="call_stack();"
+            clearInput></ion-input>
+
+        </ion-item>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row>
+
+      <ion-col size="8">
+        <ion-item>
+          <ion-label position="fixed">ค้นหายา</ion-label>
+          <ion-input #input type="text" placeholder="พิมพ์ชื่อยา" [(ngModel)]="HN_key" (keyup.enter)="call_stack();"
+            clearInput></ion-input>
+          <!-- <ion-searchbar></ion-searchbar> -->
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-item lines="none">
+          <ion-label position="fixed">ยาต่ำกว่าระดับ</ion-label>
+          <input [(ngModel)]="checkmin" type="checkbox" aria-label="Checkbox for following text input">
+        </ion-item>
+      </ion-col>
+
+      <ion-col>
+        <ion-button color="danger" (click)="serchdrug();">ค้นหา</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+  <ion-grid>
+    <!-- <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let item of data;">
+            <ion-row>
+              <ion-col size="8">
+                <ion-item-group>
+                  <h1>{{item.genericname}}</h1>
+                  <ion-label>{{item.remain}} {{item.fname}} {{item.lname}}</ion-label>
+                </ion-item-group>
+              </ion-col>
+              <ion-col>
+                <ion-button expand="block" size="large" (click)="_call$(item.internal_que);">เรียกซ้ำ</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row style="border-bottom: 2px cadetblue solid ;">
+      <ion-col size="1" style="text-align: center;">
+        ลำดับ
+      </ion-col>
+      <ion-col>
+        ชื่อยา
+      </ion-col>
+      <ion-col size="2">
+        จำนวน
+      </ion-col>
+      <ion-col size="2">
+        <!-- <ion-button expand="block" size="small" (click)="_call$(item.internal_que);">ประวัติ</ion-button> -->
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let item of data; let i = 'index + 1'" style="border-bottom: 2px cadetblue solid ;">
+      <ion-col size="1" style="text-align: center;">
+        {{i}}
+      </ion-col>
+      <ion-col>
+        {{item.genericname}}
+      </ion-col>
+      <ion-col size="2">
+        {{item.remain}}
+      </ion-col>
+      <ion-col size="2">
+        <ion-button [routerLink]="['/order-transaction']" [queryParams]="{ page: item.icode }" expand="block" size="small">ประวัติ</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
